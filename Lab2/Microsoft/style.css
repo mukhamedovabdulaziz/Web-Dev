@@ -10,6 +10,10 @@ body {
 }
 
 header {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   padding: 0 2rem;
 }
 
@@ -160,4 +164,38 @@ h1 {
 
 .products2-block h1 {
   padding: 1rem;
+}
+
+footer {
+  background-color: rgb(228, 228, 228);
+  /* padding: 1rem; */
+}
+
+footer p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #616161;
+  padding: 36px 0 4px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #616161;
+  font-size: 0.75rem;
+  padding: 8px 0;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-block {
+  display: flex;
+  flex-direction: column;
 }
