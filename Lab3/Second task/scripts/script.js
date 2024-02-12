@@ -9,6 +9,8 @@ form.addEventListener("submit", function (event) {
   const text = input.value;
   input.value = "";
   const li = document.createElement("li");
+  list.appendChild(li);
+  
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   li.appendChild(checkbox);
@@ -16,8 +18,6 @@ form.addEventListener("submit", function (event) {
   const taskText = document.createElement("span");
   taskText.textContent = text;
   li.appendChild(taskText);
-
-  list.appendChild(li);
 
   const deleteIcon = document.createElement("img");
   deleteIcon.src = "assets/images/delete.png";
