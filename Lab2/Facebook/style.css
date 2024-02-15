@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+}
+
 .container {
   width: 100%;
   display: flex;
@@ -114,6 +118,10 @@
   margin-top: 20px;
 }
 
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
 .create {
   text-decoration: none;
   font-weight: 600;
@@ -143,7 +151,7 @@ footer a:hover {
   text-decoration: underline;
 }
 
-footer .languages li:first-child a:hover {
+footer .languages a:first-child:hover {
   cursor: inherit;
   text-decoration: none;
 }
