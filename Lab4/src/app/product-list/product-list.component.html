@@ -1,0 +1,25 @@
+<!-- <h2>Products</h2> -->
+
+<div class="items-grid">
+  <div class="items" *ngFor="let product of products">
+    <a [href]="product.link" target="_blank"><img class="item-card__image" [src]="product.image" [alt]="product.name"
+        width="211" height="150" />
+      <h3>
+        <a [title]="product.name + ' details'">
+          {{ product.name }}
+        </a>
+      </h3>
+    </a>
+
+    <p *ngIf="product.description"><span *ngFor="let paragraph of product.description.split('\n')">
+        - {{ paragraph }}<br>
+      </span></p>
+
+    <div class="share">
+      <p class="rating">Рейтинг: {{ product.rating }}</p>
+      <button type="button" (click)="share(product.link, product.name)">Поделиться</button>
+    </div>
+
+    <!-- <app-product-alerts [product]="product"></app-product-alerts> -->
+  </div>
+</div>
