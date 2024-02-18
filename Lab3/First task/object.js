@@ -4,7 +4,7 @@ function isEmpty(obj) {
   }
   return true;
 }
-
+// ----------------------------------------
 let salaries = {
   John: 100,
   Ann: 160,
@@ -18,6 +18,7 @@ for (let key in salaries) {
 
 alert(sum);
 
+// ----------------------------------------
 function multiplyNumeric(obj) {
   for (let key in obj) {
     if (typeof obj[key] == "number") {
@@ -26,6 +27,7 @@ function multiplyNumeric(obj) {
   }
 }
 
+// ----------------------------------------
 function makeUser() {
   return {
     name: "John",
@@ -35,8 +37,9 @@ function makeUser() {
 
 let user = makeUser();
 
-alert(user.ref.name); // Error
+alert(user.ref.name);
 
+// ----------------------------------------
 let calculator = {
   read() {
     this.a = +prompt("Enter a", 0);
@@ -56,6 +59,7 @@ calculator.read();
 alert(calculator.sum());
 alert(calculator.mul());
 
+// ----------------------------------------
 let ladder = {
   step: 0,
   up() {
@@ -74,6 +78,7 @@ let ladder = {
 
 ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
 
+// ----------------------------------------
 let obj = {};
 
 function A() {
@@ -84,6 +89,8 @@ function B() {
 }
 
 alert(new A() == new B());
+
+// ----------------------------------------
 
 let calculator = new Calculator();
 calculator.read();
@@ -103,7 +110,7 @@ function Calculator() {
     return this.a * this.b;
   };
 }
-
+//---------------------------------------
 function Accumulator(startingValue) {
   this.value = startingValue;
 

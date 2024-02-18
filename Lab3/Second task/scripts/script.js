@@ -6,24 +6,27 @@ const list = document.getElementById("todo-list");
 
 form.addEventListener("submit", function (event) {
   event.preventDefault();
-  const text = input.value;
-  input.value = "";
-  const li = document.createElement("li");
-  list.appendChild(li);
-  
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  li.appendChild(checkbox);
+  const text = input.value.trim();
 
-  const taskText = document.createElement("span");
-  taskText.textContent = text;
-  li.appendChild(taskText);
+  if (text !== "") {
+    input.value = "";
+    const li = document.createElement("li");
+    list.appendChild(li);
 
-  const deleteIcon = document.createElement("img");
-  deleteIcon.src = "assets/images/delete.png";
-  deleteIcon.alt = "Delete";
-  deleteIcon.width = 20;
-  li.appendChild(deleteIcon);
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    li.appendChild(checkbox);
+
+    const taskText = document.createElement("span");
+    taskText.textContent = text;
+    li.appendChild(taskText);
+
+    const deleteIcon = document.createElement("img");
+    deleteIcon.src = "assets/images/delete.png";
+    deleteIcon.alt = "Delete";
+    deleteIcon.width = 20;
+    li.appendChild(deleteIcon);
+  }
 });
 
 list.addEventListener("change", function (event) {

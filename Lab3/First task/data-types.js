@@ -6,32 +6,32 @@ str.test = 5;
 
 alert(str.test); //Uncaught TypeError: Cannot create property 'test' on string 'Hello'at script.js:428:10
 
-According to the documentation Math.round and toFixed both round to the nearest number: 0..4 lead down while 5..9 lead up.
+// According to the documentation Math.round and toFixed both round to the nearest number: 0..4 lead down while 5..9 lead up.
 
-For instance:
+// For instance:
 
-alert( 1.35.toFixed(1) ); // 1.4
-In the similar example below, why is 6.35 rounded to 6.3, not 6.4?
+alert((1.35).toFixed(1)); // 1.4
 
-alert( 6.35.toFixed(1) ); // 6.3
-How to round 6.35 the right way?
+alert((6.35).toFixed(1)); // 6.3
 
-alert( Math.round(6.35 * 10) / 10 ); // 6.4
+alert(Math.round(6.35 * 10) / 10); // 6.4
 
+//--------------------------------------
 function readNumber() {
   let num;
 
   do {
     num = prompt("Enter a number please?", 0);
-  } while ( !isFinite(num) );
+  } while (!isFinite(num));
 
-  if (num === null || num === '') return null;
+  if (num === null || num === "") return null;
 
   return +num;
 }
 
 alert(`Read: ${readNumber()}`);
 
+//--------------------------------------
 let i = 0;
 while (i != 10) {
   i += 0.2;
@@ -42,41 +42,43 @@ function random(min, max) {
   return min + Math.random() * (max - min);
 }
 
-alert( random(1, 5) );
-alert( random(1, 5) );
-alert( random(1, 5) );
+alert(random(1, 5));
+alert(random(1, 5));
+alert(random(1, 5));
 
 function randomInteger(min, max) {
-  // случайное число от min до (max+1)
   let rand = min + Math.random() * (max + 1 - min);
   return Math.floor(rand);
 }
 
-alert( randomInteger(1, 3) );
+alert(randomInteger(1, 3));
 
+//--------------------------------------
 function ucFirst(str) {
   if (!str) return str;
 
   return str[0].toUpperCase() + str.slice(1);
 }
 
-alert( ucFirst("john") ); // John
+alert(ucFirst("john")); // John
 
+//--------------------------------------
 function checkSpam(str) {
   let lowerStr = str.toLowerCase();
 
-  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+  return lowerStr.includes("viagra") || lowerStr.includes("xxx");
 }
 
-alert( checkSpam('buy ViAgRA now') );
-alert( checkSpam('free xxxxx') );
-alert( checkSpam("innocent rabbit") );
+alert(checkSpam("buy ViAgRA now"));
+alert(checkSpam("free xxxxx"));
+alert(checkSpam("innocent rabbit"));
 
+//--------------------------------------
 function truncate(str, maxlength) {
-  return (str.length > maxlength) ?
-    str.slice(0, maxlength - 1) + '…' : str;
+  return str.length > maxlength ? str.slice(0, maxlength - 1) + "…" : str;
 }
 
+//--------------------------------------
 function extractCurrencyValue(str) {
   return +str.slice(1);
 }
@@ -84,7 +86,7 @@ function extractCurrencyValue(str) {
 let styles = ["Jazz", "Blues"];
 styles.push("Rock-n-Roll");
 styles[Math.floor((styles.length - 1) / 2)] = "Classics";
-alert( styles.shift() );
+alert(styles.shift());
 styles.unshift("Rap", "Reggae");
 
 let arr = ["a", "b"];
@@ -95,12 +97,11 @@ arr.push(function () {
 
 console.log(arr[2]()); // a, b, function() { alert( this ) }
 
+//--------------------------------------
 function sumInput() {
-
   let numbers = [];
 
   while (true) {
-
     let value = prompt("A number please?", 0);
 
     // should we cancel?
@@ -116,21 +117,23 @@ function sumInput() {
   return sum;
 }
 
-alert( sumInput() );
+alert(sumInput());
 
+//--------------------------------------
 function getMaxSubSum(arr) {
   let maxSum = 0;
   let partialSum = 0;
 
-  for (let item of arr) { // for each item of arr
-    partialSum += item; // add it to partialSum
-    maxSum = Math.max(maxSum, partialSum); // remember the maximum
-    if (partialSum < 0) partialSum = 0; // zero if negative
+  for (let item of arr) {
+    partialSum += item;
+    maxSum = Math.max(maxSum, partialSum);
+    if (partialSum < 0) partialSum = 0;
   }
 
   return maxSum;
 }
 
+//--------------------------------------
 function camelize(str) {
   return str
     .split("-")
@@ -140,6 +143,7 @@ function camelize(str) {
     .join("");
 }
 
+//--------------------------------------
 function filterRange(arr, a, b) {
   return arr.filter((item) => a <= item && item <= b);
 }
@@ -152,6 +156,7 @@ alert(filtered);
 
 alert(arr);
 
+//--------------------------------------
 function filterRangeInPlace(arr, a, b) {
   for (let i = 0; i < arr.length; i++) {
     let val = arr[i];
@@ -171,6 +176,7 @@ let arr = [5, 2, 1, -10, 8];
 arr.sort((a, b) => b - a);
 alert(arr);
 
+//--------------------------------------
 function copySorted(arr) {
   return arr.slice().sort();
 }
@@ -180,6 +186,7 @@ let sorted = copySorted(arr);
 alert(sorted);
 alert(arr);
 
+//--------------------------------------
 function Calculator() {
   this.methods = {
     "-": (a, b) => a - b,
@@ -204,6 +211,7 @@ function Calculator() {
   };
 }
 
+//--------------------------------------
 let john = { name: "John", age: 25 };
 let pete = { name: "Pete", age: 30 };
 let mary = { name: "Mary", age: 28 };
@@ -214,12 +222,14 @@ let names = users.map((item) => item.name);
 
 alert(names);
 
+//--------------------------------------
 let john = { name: "John", surname: "Smith", id: 1 };
 let pete = { name: "Pete", surname: "Hunt", id: 2 };
 let mary = { name: "Mary", surname: "Key", id: 3 };
 
 let users = [john, pete, mary];
 
+//--------------------------------------
 let usersMapped = users.map((user) => ({
   fullName: `${user.name} ${user.surname}`,
   id: user.id,
@@ -228,6 +238,7 @@ let usersMapped = users.map((user) => ({
 alert(usersMapped[0].id);
 alert(usersMapped[0].fullName);
 
+//--------------------------------------
 function sortByAge(arr) {
   arr.sort((a, b) => a.age - b.age);
 }
@@ -244,6 +255,7 @@ alert(arr[0].name);
 alert(arr[1].name);
 alert(arr[2].name);
 
+//--------------------------------------
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
@@ -252,6 +264,7 @@ let arr = [1, 2, 3];
 shuffle(arr);
 alert(arr);
 
+//--------------------------------------
 function getAverageAge(users) {
   return users.reduce((prev, user) => prev + user.age, 0) / users.length;
 }
@@ -264,6 +277,7 @@ let arr = [john, pete, mary];
 
 alert(getAverageAge(arr));
 
+//--------------------------------------
 function unique(arr) {
   let result = [];
 
@@ -276,6 +290,7 @@ function unique(arr) {
   return result;
 }
 
+//--------------------------------------
 let strings = [
   "Hare",
   "Krishna",
@@ -290,6 +305,7 @@ let strings = [
 
 alert(unique(strings));
 
+//--------------------------------------
 function groupById(array) {
   return array.reduce((obj, value) => {
     obj[value.id] = value;
@@ -297,10 +313,12 @@ function groupById(array) {
   }, {});
 }
 
+//--------------------------------------
 function unique(arr) {
   return Array.from(new Set(arr));
 }
 
+//--------------------------------------
 function aclean(arr) {
   let map = new Map();
   for (let word of arr) {
@@ -312,12 +330,14 @@ function aclean(arr) {
 let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 alert(aclean(arr));
 
+//--------------------------------------
 let map = new Map();
 map.set("name", "John");
 let keys = Array.from(map.keys());
 keys.push("more");
 alert(keys);
 
+//--------------------------------------
 let messages = [
   { text: "Hello", from: "John" },
   { text: "How goes?", from: "John" },
@@ -335,6 +355,7 @@ alert("Read message 0: " + readMessages.has(messages[0]));
 
 messages.shift();
 
+//--------------------------------------
 let messages = [
   { text: "Hello", from: "John" },
   { text: "How goes?", from: "John" },
@@ -345,6 +366,7 @@ let readMap = new WeakMap();
 
 readMap.set(messages[0], new Date(2017, 1, 1));
 
+//--------------------------------------
 function sumSalaries(salaries) {
   let sum = 0;
   for (let salary of Object.values(salaries)) {
@@ -354,6 +376,7 @@ function sumSalaries(salaries) {
   return sum;
 }
 
+//--------------------------------------
 let salaries = {
   John: 100,
   Pete: 300,
@@ -362,10 +385,12 @@ let salaries = {
 
 alert(sumSalaries(salaries));
 
+//--------------------------------------
 function count(obj) {
   return Object.keys(obj).length;
 }
 
+//--------------------------------------
 let user = {
   name: "John",
   years: 30,
@@ -377,6 +402,7 @@ alert(name);
 alert(age);
 alert(isAdmin);
 
+//--------------------------------------
 let salaries = {
   John: 100,
   Pete: 300,
@@ -397,29 +423,32 @@ function topSalary(salaries) {
   return maxName;
 }
 
+//--------------------------------------
 let date = new Date("2012-02-20T03:12");
 alert(date);
 
+//--------------------------------------
 function getWeekDay(date) {
   let days = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
 
   return days[date.getDay()];
 }
 
-let date = new Date(2014, 0, 3); // 3 Jan 2014
-alert(getWeekDay(date)); // FR
+//--------------------------------------
+let date = new Date(2014, 0, 3);
+alert(getWeekDay(date));
 
 function getLocalDay(date) {
   let day = date.getDay();
 
   if (day == 0) {
-    // weekday 0 (sunday) is 7 in european
     day = 7;
   }
 
   return day;
 }
 
+//--------------------------------------
 function getDateAgo(date, days) {
   let dateCopy = new Date(date);
 
@@ -433,6 +462,7 @@ alert(getDateAgo(date, 1));
 alert(getDateAgo(date, 2));
 alert(getDateAgo(date, 365));
 
+//--------------------------------------
 function getLastDayOfMonth(year, month) {
   let date = new Date(year, month + 1, 0);
   return date.getDate();
@@ -442,6 +472,7 @@ alert(getLastDayOfMonth(2012, 0));
 alert(getLastDayOfMonth(2012, 1));
 alert(getLastDayOfMonth(2013, 1));
 
+//--------------------------------------
 function getSecondsToday() {
   let date = new Date();
   return date.getHours() * 3600 + date.getMinutes() * 60 + date.getSeconds();
@@ -449,6 +480,7 @@ function getSecondsToday() {
 
 alert(getSecondsToday());
 
+//--------------------------------------
 function getSecondsToTomorrow() {
   let now = new Date();
   let hour = now.getHours();
@@ -460,6 +492,7 @@ function getSecondsToTomorrow() {
   return totalSecondsInADay - totalSecondsToday;
 }
 
+//--------------------------------------
 function formatDate(date) {
   let dayOfMonth = date.getDate();
   let month = date.getMonth() + 1;
@@ -488,6 +521,7 @@ function formatDate(date) {
   }
 }
 
+//--------------------------------------
 let user = {
   name: "John Smith",
   age: 35,
@@ -495,6 +529,7 @@ let user = {
 
 let user2 = JSON.parse(JSON.stringify(user));
 
+//--------------------------------------
 let room = {
   number: 23,
 };
