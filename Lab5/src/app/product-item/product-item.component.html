@@ -1,0 +1,22 @@
+<!-- product-item.component.html -->
+<div *ngIf="product" class="product-details">
+    <img class="item-card__image" [src]="product.image" [alt]="product.name" />
+    <div class="product-info">
+        <h2>{{ product.name }}</h2>
+        <p class="rating">Рейтинг: {{ product.rating }}</p>
+
+        <div class="item-buttons">
+            <p class="price">Цена: {{ product.price }} ₸</p>
+            <button type="button" (click)="likeProduct()">Лайк<span class="likes-counter">{{ product.likes || 0
+                    }}</span>
+            </button>
+        </div>
+        <p *ngIf="product.description">
+            <span *ngFor="let paragraph of product.description.split('\n')">- {{ paragraph }}<br></span>
+        </p>
+        <div class="item-buttons">
+            <button type="button" (click)="share(product.link, product.name)">Поделиться</button>
+            <button type="button" (click)="removeProduct()">Удалить</button>
+        </div>
+    </div>
+</div>

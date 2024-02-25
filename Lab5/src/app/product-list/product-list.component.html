@@ -1,0 +1,16 @@
+<div class="items-grid">
+  <div class="items" *ngFor="let product of products">
+    <a [routerLink]="['/product-item', product.id]">
+      <img class="item-card__image" [src]="product.image" [alt]="product.name" width="211" height="150" />
+      <h3 [title]="product.name + ' details'">{{ product.name }}</h3>
+    </a>
+
+    <p class="product-list__price">Цена: {{product.price}} ₸</p>
+
+    <div class="share">
+      <p class="rating">Рейтинг: {{ product.rating }}</p>
+      <button type="button" (click)="share(product.link, product.name)">Поделиться</button>
+    </div>
+
+  </div>
+</div>

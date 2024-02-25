@@ -1,0 +1,31 @@
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.product-info {
+  margin-left: 20px;
+}
+
+.item-card__image {
+  width: 211px;
+  height: 100%;
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.likes-counter {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #fff;
+}
+
+.item-buttons {
+  display: flex;
+  justify-content: space-between;
+}

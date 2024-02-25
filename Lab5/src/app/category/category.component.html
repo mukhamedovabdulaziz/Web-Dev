@@ -1,0 +1,6 @@
+<div class="categories-grid">
+    <div class="category" *ngFor="let category of categories" (click)="navigateToCategory(category.category)">
+        <h3>{{ category.name }}</h3>
+        <img [src]="category.img" alt="image" />
+    </div>
+</div>
