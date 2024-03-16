@@ -7,7 +7,7 @@ export interface Product {
   price: number;
   link: string;
   category: string;
-  likes?: number;
+  likes: number;
 }
 
 export const products = [
@@ -24,6 +24,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/apple-20w-usb-c-power-adapter-belyi-100984093/?c=750000000',
     category: 'gadjets',
+    likes: 0
   },
   {
     id: 2,
@@ -42,6 +43,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/apple-iphone-11-128gb-slim-box-chernyi-100692388/?c=750000000',
     category: 'gadjets',
+    likes: 0
   },
   {
     id: 3,
@@ -56,6 +58,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/apple-20w-usb-c-power-adapter-apple-usb-c---lightning-1-m-101103131/?c=750000000',
     category: 'gadjets',
+    likes: 0
   },
   {
     id: 4,
@@ -74,6 +77,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/apple-iphone-13-128gb-midnight-chernyi-102298404/?c=750000000',
     category: 'gadjets',
+    likes: 0
   },
   {
     id: 5,
@@ -92,6 +96,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/apple-iphone-14-128gb-chernyi-106363023/?c=750000000',
     category: 'gadjets',
+    likes: 0
   },
   {
     id: 6,
@@ -110,6 +115,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/xiaomi-redmi-note-12-pro-4g-8-gb-256-gb-seryi-109775102/?c=750000000',
     category: 'home',
+    likes: 0
   },
   {
     id: 7,
@@ -128,6 +134,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/xiaomi-redmi-12-4g-8-gb-256-gb-chernyi-110918152/?c=750000000',
     category: 'home',
+    likes: 0
   },
   {
     id: 8,
@@ -146,6 +153,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/apple-iphone-13-128gb-belyi-102298420/?c=750000000',
     category: 'home',
+    likes: 0
   },
   {
     id: 9,
@@ -160,6 +168,7 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/smart-case-dlja-apple-iphone-13-prozrachnyi-106185651/?c=750000000',
     category: 'home',
+    likes: 0
   },
   {
     id: 10,
@@ -178,5 +187,6 @@ export const products = [
     price: 9999,
     link: 'https://kaspi.kz/shop/p/samsung-galaxy-a24-6-gb-128-gb-chernyi-110343531/?c=750000000',
     category: 'home',
+    likes: 0
   },
 ];

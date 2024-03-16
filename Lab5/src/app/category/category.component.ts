@@ -33,6 +33,6 @@ export class CategoryComponent {
   constructor(private router: Router) {}
 
   navigateToCategory(category: string) {
-    this.router.navigate([category]);
+    this.router.navigate(['product-list', category]);
   }
 }

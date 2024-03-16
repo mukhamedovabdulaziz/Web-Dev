@@ -15,14 +15,14 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
-      const productId = +params['productId'];
+      const productId = Number(params['productId']);
       this.product = products.find((product) => product.id === productId);
     });
   }
 
   likeProduct() {
     if (this.product) {
-      this.product.likes = (this.product.likes || 0) + 1;
+      this.product.likes++;
     }
   }
 
@@ -34,7 +34,7 @@ export class ProductItemComponent implements OnInit {
   removeProduct() {
     if (this.product) {
       products.splice(products.indexOf(this.product), 1);
-      this.router.navigate(['/product-list']);
+      this.router.navigate(['/product-list', this.product.category]);
     }
   }
 }
