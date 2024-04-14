@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.http import JsonResponse, HttpResponseNotAllowed
 from django.views.decorators.csrf import csrf_exempt
-from .models import Company, Vacancy
+from api.models import Company, Vacancy
 import json
 
 @csrf_exempt
